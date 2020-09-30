@@ -74,9 +74,14 @@ pg_ctl -D /usr/local/var/postgres start
 ➜ ~ psql -h 127.0.0.1 -U strapi -d strapi -W < strapi_dump.sql
 
 
-- Logar no painel do Strapi
+- Logar no painel do Strapi LOCAL
 Strapi Login: paulajbastos@gmail.com
 Strapi Senha: Admin123
+
+
+- como gerar o ADMIN_JWT_SECRET Token:
+(https://strapi.io/documentation/v3.x/migration-guide/migration-guide-3.0.x-to-3.1.x.html)
+node -e "console.log(require('crypto').randomBytes(64).toString('base64'))" # (all users)
 
 
 Prod:
@@ -88,5 +93,7 @@ postgres://username:password@host:port/dbname
 heroku config:set DATABASE_USERNAME=username
 heroku config:set DATABASE_PASSWORD=password
 heroku config:set DATABASE_HOST=host
-heroku config:set DATABASE_PORT=port
+heroku config:set DATABASE_PORT=5432
 heroku config:set DATABASE_NAME=dbname
+heroku config:set ADMIN_JWT_SECRET=gerarToken
+
