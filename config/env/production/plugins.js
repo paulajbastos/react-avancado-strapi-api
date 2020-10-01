@@ -1,8 +1,10 @@
 module.exports = ({ env }) => ({
   upload: {
-    provider: 'dropbox',
+    provider: "cloudinary",
     providerOptions: {
-      accessToken: env("DROPBOX_ACCESS_TOKEN"),
+      cloud_name: env("CLOUDINARY_NAME"),
+      api_key: env("CLOUDINARY_KEY"),
+      api_secret: env("CLOUDINARY_SECRET"),
     },
   },
 });
