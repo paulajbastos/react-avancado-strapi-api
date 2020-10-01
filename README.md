@@ -97,3 +97,9 @@ heroku config:set DATABASE_PORT=5432
 heroku config:set DATABASE_NAME=dbname
 heroku config:set ADMIN_JWT_SECRET=gerarToken
 
+- Salva Local database
+PGPASSWORD=strapi123 pg_dump -Fc --no-acl --no-owner -h localhost -U strapi strapi > strapi-local.dump
+
+- Import Local database to heroku
+heroku pg:backups:restore 'https://paulajbastosdev.com/strapi-local.dump' DATABASE_URL
+
