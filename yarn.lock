@@ -2739,7 +2739,7 @@ buffer@4.9.2, buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-buffer@^5.1.0, buffer@^5.5.0:
+buffer@^5.1.0, buffer@^5.5.0, buffer@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.6.0.tgz#a31749dc7d81d84db08abf937b6b8c4033f62786"
   integrity sha512-/gDYp/UtU0eA1ys8bOs9J6a+E/KWIY+DZ+Q2WESNUA0jFRsJOc0SNUO6xJ5SGA1xueg3NL65W6s+NY5l9cunuw==
@@ -3914,6 +3914,14 @@ draft-js@^0.11.5:
     fbjs "^2.0.0"
     immutable "~3.7.4"
     object-assign "^4.1.1"
+
+dropbox@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/dropbox/-/dropbox-5.2.1.tgz#ef2f40d2216bfd90381d033beddb6c13e27b6e56"
+  integrity sha512-B34kdU6X56DdN1wGjRSb30I9oXy4t33ssu+JLbc9wHZACgstRb8Jb2hzoCOtHv+ZCCgwQJ0fEztVcXJRGpHQnQ==
+  dependencies:
+    buffer "^5.6.0"
+    moment "^2.25.3"
 
 duplexify@^3.4.2, duplexify@^3.6.0:
   version "3.7.1"
@@ -6781,7 +6789,7 @@ moment-timezone@^0.5.21, moment-timezone@^0.5.31:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@>=1.6.0, moment@^2.16.0, moment@^2.24.0:
+"moment@>= 2.9.0", moment@>=1.6.0, moment@^2.16.0, moment@^2.24.0, moment@^2.25.3:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.0.tgz#fcbef955844d91deb55438613ddcec56e86a3425"
   integrity sha512-z6IJ5HXYiuxvFTI6eiQ9dm77uE0gyy1yXNApVHqTcnIKfY9tIwEjlzsZ6u1LQXvVgKeTnv9Xm7NDvJ7lso3MtA==
@@ -6952,7 +6960,7 @@ node-fetch@2.6.0:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
-node-fetch@2.6.1, node-fetch@^2.1.2, node-fetch@^2.2.0:
+node-fetch@2.6.1, node-fetch@^2.1.2, node-fetch@^2.2.0, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -9721,6 +9729,14 @@ strapi-provider-upload-aws-s3@^3.1.2:
   dependencies:
     aws-sdk "^2.457.0"
     lodash "4.17.19"
+
+strapi-provider-upload-dropbox@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/strapi-provider-upload-dropbox/-/strapi-provider-upload-dropbox-1.0.2.tgz#e0311c83cb0d284f302a9a8ef1c742da36e2d3b7"
+  integrity sha512-Ts0B5HFuyll1VV310V5HJb00qckWASIt2N+c8TIL2v89NlFkbhOr2StsvdU5+ada5K1iJm9TGBQ5hM2hEvMsqg==
+  dependencies:
+    dropbox "^5.2.1"
+    node-fetch "^2.6.1"
 
 strapi-provider-upload-local@3.1.2:
   version "3.1.2"
