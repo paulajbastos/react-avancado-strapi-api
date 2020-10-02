@@ -67,6 +67,7 @@ DROP DATABASE IF EXISTS strapi;
 GRANT ALL PRIVILEGES ON DATABASE strapi TO strapi;
 
 - ReStart Server:
+brew services restart postgresql
 pg_ctl -D /usr/local/var/postgres stop
 pg_ctl -D /usr/local/var/postgres start
 
