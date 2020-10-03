@@ -36,47 +36,72 @@ This project uses `Postgres` and if you want all the data previously, unzip the 
 
 ## Guides
 
+```
 brew install postgresql
+```
 
 - Start Server:
+```
 pg_ctl -D /usr/local/var/postgres start
+```
 
 - enter postgresql
+```
 psql postgres
+```
 
 - cria o usuario pro banco
+```
 postgres=# CREATE ROLE strapi WITH LOGIN PASSWORD 'strapi';
+```
+```
 postgres=# ALTER ROLE strapi WITH PASSWORD 'strapi123'; 
+```
 or
+```
 postgres=# ALTER user strapi with encrypted password 'strapi123';
-
+```
 
 - lista usuários
+```
 postgres=# \du
+```
 - superuser: paulajbastos
 
 - add permission to create DB
+```
 postgres=# ALTER ROLE strapi CREATEDB;
-
+```
 - logar com o novo usuário
+```
 psql postgres -U strapi
-
+```
 - cria o banco
+```
 CREATE DATABASE strapi;
-
-- deleta banco
+```
+- deleta 
+```
 DROP DATABASE IF EXISTS strapi;
-
+```
+```
 GRANT ALL PRIVILEGES ON DATABASE strapi TO strapi;
-
+```
 - ReStart Server:
+```
 brew services restart postgresql
+```
+or
+```
 pg_ctl -D /usr/local/var/postgres stop
+```
+```
 pg_ctl -D /usr/local/var/postgres start
-
+```
 - Copiar o banco de dados de guia para o strapi via postgres
+```
 ➜ ~ psql -h 127.0.0.1 -U strapi -d strapi -W < strapi_dump.sql
-
+```
 
 - Logar no painel do Strapi LOCAL
 Strapi Login: paulajbastos@gmail.com
@@ -90,7 +115,9 @@ node -e "console.log(require('crypto').randomBytes(64).toString('base64'))" # (a
 
 ## Production:
 
---- heroku config
+```
+heroku config
+```
 
 postgres://username:password@host:port/dbname
 
@@ -102,11 +129,15 @@ heroku config:set DATABASE_NAME=dbname
 heroku config:set ADMIN_JWT_SECRET=gerarToken
 
 - Salva Local database
+```
 PGPASSWORD=strapi123 pg_dump -Fc --no-acl --no-owner -h localhost -U strapi strapi > strapi-local.dump
+```
+
 
 - Import Local database to heroku
+```
 heroku pg:backups:restore 'https://paulajbastosdev.com/strapi-local.dump' DATABASE_URL
-
+```
 
 ## Demo:
 
