@@ -33,6 +33,9 @@ The first time to access the Admin you'll need to create an user.
 
 This project uses `Postgres` and if you want all the data previously, unzip the [data.zip](data.zip), copy the `uploads` folder to [public/uploads](public/uploads) and restore the data from the `local.dump` file inside the zip.
 
+
+## Guides
+
 brew install postgresql
 
 - Start Server:
@@ -85,7 +88,7 @@ Strapi Senha: Admin123
 node -e "console.log(require('crypto').randomBytes(64).toString('base64'))" # (all users)
 
 
-Prod:
+## Production:
 
 --- heroku config
 
@@ -104,3 +107,7 @@ PGPASSWORD=strapi123 pg_dump -Fc --no-acl --no-owner -h localhost -U strapi stra
 - Import Local database to heroku
 heroku pg:backups:restore 'https://paulajbastosdev.com/strapi-local.dump' DATABASE_URL
 
+
+## Demo:
+
+[https://react-avancado-strapi-api.herokuapp.com/admin/](https://react-avancado-strapi-api.herokuapp.com/admin/)
