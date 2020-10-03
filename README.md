@@ -1,6 +1,6 @@
 # React Avançado - Landing Page API
 
-This is the API to create the [React Avançado Landing Page](https://reactavancado.com.br/).
+This is the API to create the [React Avançado Landing Page](https://paulajbastos-react-avancado-landpage.netlify.app/).
 
 ## Requirements
 
